@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Get involved in the BookNest community, supporting independent bookshops. Attend event, enter giveaways and competitions and take part in reading challenges.">
+	<meta name="keywords" content="local independent bookshop, book signings, meet the author, book launch, reading challenge">
+	<title>BookNest - Register as a member</title>
+
+	<link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/slicknav.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+	<script type="text/javascript">
+    $(document).ready(function(){
+		$('#nav_menu').slicknav({prependTo:"#mobilemenu"});
+    });
+    </script>
+
+</head>
+
+<body>
+	<header>
+		<div class="logo">
+		<a href="index.html">
+        <img src= "images/logo.png" alt="BookNest logo">
+		<span class="company-name">BookNest</span>
+		</a>
+		</div>
+	</header>
+    <nav id="mobilemenu"></nav>
+	<nav id="nav_menu">
+    	<ul>
+        	<li><a href="index.html">Home</a></li>
+        	<li><a href="services.html">Services</a></li>
+        	<li><a href="bookstores.html">Bookstores</a></li>
+			<li><a href="register.html" class="current">Registration</a></li>
+        	<li><a href="events.html" >Events & News</a></li>
+        	<li><a href="about_us.html">About Us</a>
+            	<ul>
+                	<li><a href="our_history.html">Our History</a></li>
+                	<li><a href="staff_members.html">Staff Members</a></li>
+                	<li><a href="user_reviews.html">User Reviews</a></li>
+            	</ul>
+			</li>
+            <li><a href="contact_us.html">Contact Us</a></li>
+    	</ul>
+	</nav>
+	<main>
+        <section>
+        <h1>Registration Form</h1>
+        <p> Sign up for updates or events.</p>
+        <form action="confirmation_page.html" method="get"
+            name="registration_form" id="registration_form">
+            
+            <fieldset>
+                <legend>Your Details</legend>
+                <div>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="jane_smith@mail.co.uk">
+                    <span>*</span>
+                </div>
+                <div>
+                    <label for="first_name">First Name:</label>
+                    <input type="text" id="first_name" name="first_name" placeholder="Jane">
+                    <span>*</span>
+                </div>
+                <div>
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name" placeholder="Smith">
+                    <span>*</span>
+                </div>
+                <div>
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" name="phone" placeholder="01234567890">
+                    <span>*</span>
+                </div>
+                <div>
+                    <label for="address">First line of address:</label>
+                    <input type="text" id="address" name="address" placeholder="1 Royal Street">
+                    <span>*</span>
+                </div>
+                <div>
+                    <label for="city">Nearest City/Town:</label>
+                    <input type="text" id="city" name="city" placeholder="London">
+                    <span>*</span>
+                </div>
+                <div>
+                    <label for="postcode">Postcode:</label>
+                    <input type="text" id="postcode" name="postcode" placeholder="SW1A 1AA">
+                    <span>*</span>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Member Information</legend>
+                <div>
+                    <label>Can we contact you for a review?</label><span>*</span>
+                    <input type="radio" name="review_opt_in" id="review" 
+                        value="Yes" checked>Yes
+                    <input type="radio" name="review_opt_in" id="no_review" 
+                        value="No">No
+                </div>
+                <div>
+                    <label for="other_comments">Other Comments:</label>
+                    <textarea id="other_comments" name="other_comments" rows="3"></textarea>
+                    <span></span>
+                </div>
+                
+            </fieldset>
+            <fieldset id="buttons">            
+                <legend>Submit Your Registration</legend>
+                <div>
+                    <label>&nbsp;</label>
+                    <input type="submit" id="submit" name="submit" value="Submit">
+                    <input type="reset" id="reset" name="reset" value="Reset">
+                </div>
+            </fieldset>
+        </form>
+        </section>
+		<aside>
+			<h2>Review of the Month</h2>
+			<article>
+                <figure>
+                    <blockquote><p>"The author interviews are insightful, and I’ve found rare books in some of the shops."</p>
+                    </blockquote> 
+                    <figcaption> - Aminah K. </figcaption>
+                    <br>
+                    <a href="register.html">Register</a> to submit your own review for a chance to be featured on our homepage.
+				</figure>
+			</article>
+			<article>
+			<h2>Additional Resources</h2>
+			<ul>
+				<li><a href="https://www.ioba.org/" target="_blank">Independent Booksellers Association</a></li>
+				<li><a href="https://www.hayfestival.com/home" target="_blank">Hay Festival Global</a></li>
+				<li><a href="https://literacytrust.org.uk/" target="_blank">National Literacy Trust</a></li>
+			</ul>
+			</article>
+		</aside> 
+	</main>
+	<footer>
+		<p>&copy; 2026, BookNest</p>
+	</footer>
+    <script src="js/registration.js"></script>
+</body>
+</html>

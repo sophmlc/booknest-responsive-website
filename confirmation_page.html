@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Confirmation of your registration to join the BookNest online community to receive updates and event information from us.">
+	<meta name="keywords" content="independent bookshop, independent bookshop online, books to read, book reviews">
+	<title>Account Registration Confirmation - BookNest</title>
+
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/slicknav.css">
+	<script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+	<script type="text/javascript">
+    $(document).ready(function(){
+		$('#nav_menu').slicknav({prependTo:"#mobilemenu"});
+    });
+    </script>
+
+	<script>
+	const decode = text => {
+	    text = text.replace(/\+/g, " ");
+	    text = text.replace(/%[a-fA-F0-9]{2}/g, 
+	         text => String.fromCharCode( "0x" + text.substr(1,2))
+	    );
+	    return text;
+	}
+	    
+	const display_data = () => {
+	    const url_parts = window.location.toString().split("?");
+	    if ( url_parts.length != 2 ) return;
+	    
+	    const fields = url_parts[1].split("&");
+	    
+	    if ( fields.length == 0 ) {
+	        document.write("<p>No data was submitted.</p>");
+	    } else {
+	        document.write("<table>");
+	        let field_parts;
+	        for ( var i in fields ) {
+	            field_parts = fields[i].split("=");
+	            field_parts[0] = decode( field_parts[0] );
+				field_parts[1] = decode( field_parts[1] );
+				document.write("<tr>");
+	            document.write("<th>" + field_parts[0] + "</th>");
+	            document.write("<td>" + field_parts[1] + "</td>");
+				document.write("</tr>");
+	        }
+	        document.write("</table>");
+	    }
+
+	}
+
+	</script>
+</head>
+
+<body>
+	<header>
+		<div class="logo">
+		<a href="index.html">
+        <img src= "images/logo.png" alt="BookNest logo">
+		<span class="company-name">BookNest</span>
+		</a>
+		</div>
+	</header>
+	<nav id="mobilemenu"></nav>
+	<nav id="nav_menu">
+    	<ul>
+        	<li><a href="index.html">Home</a></li>
+        	<li><a href="services.html">Services</a></li>
+        	<li><a href="bookstores.html">Bookstores</a></li>
+			<li><a href="register.html">Registration</a></li>
+        	<li><a href="events.html">Events & News</a></li>
+        	<li><a href="about_us.html">About Us</a>
+            	<ul>
+                	<li><a href="our_history.html">Our History</a></li>
+                	<li><a href="staff_members.html">Staff Members</a></li>
+                	<li><a href="user_reviews.html">User Reviews</a></li>
+            	</ul>
+            </li>
+            <li><a href="contact_us.html">Contact Us</a></li>
+    	</ul>
+	</nav>
+	<main>
+	<section id="content">
+	    <h1>You are registered!</h1>
+	    <p>Your registration has been submitted with the following
+	    information:</p>
+	    <script type="text/javascript">display_data();</script>
+	</section>
+		<aside>
+			<h2>Review of the Month</h2>
+			<article>
+                <figure>
+                    <blockquote><p>"The author interviews are insightful, and I’ve found rare books in some of the shops."</p>
+                    </blockquote> 
+                    <figcaption> - Aminah K. </figcaption>
+                    <br>
+                    <a href="register.html">Register</a> to submit your own review for a chance to be featured on our homepage.
+				</figure>
+			</article>
+			<article>
+			<h2>Additional Resources</h2>
+			<ul>
+				<li><a href="https://www.ioba.org/" target="_blank">Independent Booksellers Association</a></li>
+				<li><a href="https://www.hayfestival.com/home" target="_blank">Hay Festival Global</a></li>
+				<li><a href="https://literacytrust.org.uk/" target="_blank">National Literacy Trust</a></li>
+			</ul>
+			</article>
+		</aside> 	
+	</main>
+	<footer>
+		<p>&copy; 2026, BookNest</p>
+	</footer>
+</body>
+</html>

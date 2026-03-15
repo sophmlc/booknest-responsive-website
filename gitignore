@@ -1,0 +1,10 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Documentation PDF (optional — uncomment to exclude from repo)
+*.pdf

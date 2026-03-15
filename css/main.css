@@ -1,0 +1,313 @@
+/* the styles for the elements */
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	background-color: #FAFAFA;
+}
+.card {
+    padding: 1em;
+    background:
+      linear-gradient(150deg, #a9bab2c7, #a9bab274);
+    border-radius: 10px;
+    box-shadow: 1.9px 3.8px 3.8px hsl(0deg 0% 0% / 0.44); /*Style this article: https://www.joshwcomeau.com/css/designing-shadows/ */
+} 
+.card:hover {
+    transition: transform 150ms;
+}
+.grid {
+    display:grid;
+    grid-template-columns:1fr;
+    grid-gap: 1em;
+}
+body {
+	font-family:'Inclusive Sans', sans-serif;
+    font-size: 100%;
+    width: 95%;
+    max-width: 1024px;
+    margin: 0 auto;
+    background-color: #FAFAFA;
+}
+p {
+    line-height: 1.5; /*Added for accessibility*/
+}
+.disclaimer {
+    line-height: 1.5; /*Added for accessibility*/
+    color: #3B3B3B;
+    font-style: italic;
+}
+caption {
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 3px;
+}
+table {
+    border: 1.5px solid black;
+    border-collapse: collapse; 
+    padding: 5px;
+}
+th  {
+    border: 1px solid black;
+    padding: .2em .7em;
+    text-align: left; 
+    background-color: #0F4E3A;
+    color: white;
+} 
+td {
+    border: 1.5px solid black;
+    padding: .2em .7em;
+    text-align: left; 
+}
+td:first-child {
+    font-weight: bold; /* Make text in first column fold - service names*/
+}
+tr:nth-child(odd) {
+    background-color: #a9bab274; /* Add alternate row colouring for accessibility*/
+}
+a {
+    color: #662B07 ; /*Format the links so they are displayed in brown.*/
+    text-decoration: none; /*Remove the underlines from these links.*/
+}
+a:visited {
+    color: #C9AE87 ; /* If the link has been visited then the colour should be beige. */
+}
+ a:hover, a:focus { 
+	color: #D92222; /* if the link has the focus or the mouse is hovering over it it should be displayed in red*/
+} 
+/* the styles for the header */
+header {
+	padding: 1.5em 0 2em 0;
+	border-bottom: 4px solid black; /*Add a border below the header*/
+	background-color: white;
+}
+header h1 {
+    font-size: 300%;
+    color: black;
+}
+header h2 {
+	font-size: 300%;
+	color: #0F4E3A;
+    padding-top: 2em;
+}
+header h3 {
+	font-size: 130%;
+}
+header img {
+	float: left;
+    height: auto;
+    width: 20%;
+    max-width: 70%;
+	padding: 0 3em;
+}
+.company-name {
+    font-size: 300%;
+    color: black;
+}
+/* the styles for the navigation menu */
+#nav_menu ul {
+	list-style-type: none;
+	margin: 0;
+    width: 100%;
+	position: relative; 
+}
+#nav_menu ul li {
+	float: left;
+    width: 14.28%;
+}
+#nav_menu ul li a {
+    display: block;
+    position:relative;
+    text-align: center;
+    padding: 1.5em 0;
+    text-decoration: none;
+    background-color: #0F4E3A;
+    color: white;
+    font-weight: bold; 
+    white-space: nowrap;
+    transition: 0.2s ease;
+}
+#nav_menu ul ul {
+    display: none;
+    position: absolute; 
+    top: 100%;
+    left: 0;
+    background-color:  #a9bab2;
+}
+#nav_menu ul ul li {
+	float: left;
+    width: 33.33%;
+}
+#nav_menu ul li:hover > ul {
+	display: block;
+}
+#nav_menu > ul::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+#nav_menu a:hover, #nav_menu a.current
+ {
+	color: black;
+    background-color:  #a9bab2;
+}
+
+/* the styles for the section */
+section {
+	width: 60%;
+	float: left;
+	padding: 0 1.5em 1.5em 1.5em;
+}
+section h1 {
+	font-size: 150%;
+	padding: 1em 0 .25em 0;
+	margin: 0;
+}
+section h2 {
+	color: #0F4E3A;
+	font-size: 130%;
+	padding: .5em 0 .25em 0;
+}
+section p {
+	padding-bottom: .5em;
+}
+section blockquote {
+	padding: 0 2em;
+	font-style: italic;
+}
+section ul {
+	padding: 0 0 .25em 1.25em;
+	list-style-type: circle;
+}
+section li {
+	padding-bottom: .35em;
+}
+
+/* the styles for the article */
+article {
+	padding: 1em 0;
+	border-top: 2px solid #0F4E3A;
+    margin-top: 1em;
+}
+article h2 {
+	padding-top: 0;
+}
+article h3 {
+	font-size: 105%;
+	padding-bottom: .25em;
+}
+article img {
+    margin: .5em 1em 0.5em 0;
+	border: 3px solid #0F4E3A;
+    max-width: 50%;
+}
+article blockquote {
+	padding-bottom: 0.5em;
+	font-style: italic;
+}
+
+/* the styles for the aside */
+aside {
+	width: 25%;
+	float: right;
+	padding: 1em 0 1em 1em;
+}
+aside h2 {
+	color: #0F4E3A;
+	font-size: 130%;
+	padding: .5em 0 .25em 0;
+}
+
+aside h3 {
+	font-size: 105%;
+	padding-bottom: .25em;
+}
+aside img {
+	padding-bottom: 1em;
+}
+aside ul {
+    list-style-type: none;
+}
+aside article {
+	padding: 1em;
+    margin: 0.5em 0 1em 0;
+    border-top: none;
+    border-radius: 10px;
+    background-color: #efefef;
+    background:
+      linear-gradient(150deg, #f7f7f7c7, #dfdfdf74);
+    border-radius: 10px;
+    box-shadow: 1.9px 3.8px 3.8px hsla(0, 0%, 75%, 0.44); /*Style this article: https://www.joshwcomeau.com/css/designing-shadows/ */
+
+}
+
+/* the styles for the footer */
+footer {
+	background-color: white; /*Add white background colour to the footer */
+	clear: both;
+
+}
+footer p {
+	text-align: center;
+	color: darkgrey; /*Change the colour of the footer text to dark grey.*/
+	padding: 1em 0;
+    border-top: 2px solid #0F4E3A;
+}
+/* add formatting for the form */
+label {
+	float: left;
+    width: 10em;
+    text-align: right;
+    line-height: 150%;
+}
+
+input {
+    width: 14em;
+    margin-left: 1em;
+    margin-bottom: .5em;
+}
+#buttons input {
+	width: 7em;
+	margin-right: 0;
+}
+fieldset {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-top: .5em;
+    border-radius: 10px;
+}
+legend {
+    color: #0F4E3A;
+    font-weight: bold;
+    margin-bottom: 0.75em;
+    margin-left: 0.75em;
+
+}
+span {
+	color: #D92222 ;
+	font-size: 90%;
+	margin-left: 0.25em;
+}
+#individual, #corporate {
+	width: 1em;
+	margin-bottom: .9em;
+}
+#mobilemenu {
+    display: none;
+}
+@media only screen and (max-width: 800px) 
+{
+    html {font-size: 80%;}
+    section {width: 100%}
+    aside {width: 100%}
+}
+@media only screen and (max-width: 650px) 
+{
+    html {font-size: 80%;}
+    #nav_menu {
+        display: none;
+    }
+    #mobilemenu {
+        display: block;}
+
+}
