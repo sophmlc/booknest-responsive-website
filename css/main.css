@@ -520,39 +520,27 @@ footer p {
 /* =====================================================
    FORMS
    ===================================================== */
+fieldset > div {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75em;
+  margin-bottom: 0.6em;
+  flex-wrap: wrap;
+}
+
 label {
-  float: left;
-  width: 10em;
+  min-width: 10em;
   text-align: right;
-  line-height: 150%;
   color: var(--color-text);
+  flex-shrink: 0;
+  line-height: 1.5;
 }
 
-input {
-  width: 14em;
-  margin-left: 1em;
-  margin-bottom: 0.5em;
-  padding: 0.35em 0.5em;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  background-color: var(--color-surface);
-  color: var(--color-text);
-  font-family: inherit;
-  font-size: inherit;
-  transition: border-color var(--transition), box-shadow var(--transition);
-}
-
-input:focus {
-  outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(15, 78, 58, 0.12);
-}
-
+input:not([type=radio]):not([type=submit]):not([type=reset]),
 textarea {
-  width: 14em;
-  margin-left: 1em;
-  margin-bottom: 0.5em;
-  padding: 0.35em 0.5em;
+  flex: 1;
+  min-width: 0;
+  padding: 0.4em 0.6em;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   background-color: var(--color-surface);
@@ -562,21 +550,75 @@ textarea {
   transition: border-color var(--transition), box-shadow var(--transition);
 }
 
+input:not([type=radio]):not([type=submit]):not([type=reset]):focus,
 textarea:focus {
   outline: none;
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(15, 78, 58, 0.12);
 }
 
-#buttons input {
-  width: 7em;
-  margin-right: 0;
+input.input-error,
+textarea.input-error {
+  border-color: var(--color-error);
+}
+
+/* Error message spans sit below the row, indented to align with inputs */
+fieldset > div > span {
+  flex-basis: 100%;
+  margin-left: calc(10em + 0.75em);
+  font-size: 0.85rem;
+  color: var(--color-error);
+  min-height: 1em;
+}
+
+/* Submit / Reset buttons */
+input[type=submit],
+input[type=reset] {
+  padding: 0.55em 1.4em;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  border: none;
+}
+
+input[type=submit] {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+input[type=submit]:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+input[type=reset] {
+  background-color: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+input[type=reset]:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Custom radio buttons */
+input[type=radio] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--color-primary);
+  flex-shrink: 0;
+  margin: 0;
 }
 
 fieldset {
   margin-top: 1em;
   margin-bottom: 1em;
-  padding-top: 0.5em;
+  padding: 0.75em 1em;
   border-radius: var(--radius-md);
   border-color: var(--color-border);
 }
@@ -584,19 +626,113 @@ fieldset {
 legend {
   color: var(--color-primary);
   font-weight: bold;
-  margin-bottom: 0.75em;
-  margin-left: 0.75em;
+  margin-bottom: 0.5em;
+  padding: 0 0.25em;
 }
 
-span {
-  color: var(--color-error);
-  font-size: 90%;
-  margin-left: 0.25em;
+/* Confirmation page table */
+#content table th {
+  text-align: left;
+  padding-right: 1.5em;
+  color: var(--color-text-muted);
+  font-weight: 600;
 }
 
-#individual, #corporate {
-  width: 1em;
-  margin-bottom: 0.9em;
+/* =====================================================
+   TABLE WRAPPER (mobile overflow)
+   ===================================================== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-sm);
+}
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -3em;
+  left: 1em;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  z-index: 9999;
+  transition: top 0.2s;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1em;
+  color: #fff;
+}
+
+/* =====================================================
+   STATS GRID (our_history.html)
+   ===================================================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 1.25rem;
+  background: var(--color-card-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-card .stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  display: block;
+}
+
+.stat-card .stat-label {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-top: 0.25em;
+  display: block;
+}
+
+/* =====================================================
+   REVIEW CARDS (user_reviews.html)
+   ===================================================== */
+.review-card {
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  background: var(--color-card-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.review-card blockquote {
+  border: none;
+  padding: 0;
+  font-style: italic;
+  color: var(--color-text);
+  font-size: 1.05rem;
+}
+
+.review-card figcaption {
+  margin-top: 0.5em;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 /* =====================================================
@@ -752,5 +888,25 @@ span {
 
   .bookstores-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  fieldset > div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  label {
+    text-align: left;
+    min-width: 0;
+  }
+
+  fieldset > div > span {
+    margin-left: 0;
   }
 }

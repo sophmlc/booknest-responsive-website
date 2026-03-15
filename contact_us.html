@@ -25,6 +25,7 @@
 </head>
 
 <body>
+	<a href="#main-content" class="skip-link">Skip to main content</a>
 	<header>
 		<div class="logo">
 		<a href="index.html">
@@ -52,20 +53,61 @@
             <li><a href="contact_us.html"  class="current">Contact Us</a></li>
     	</ul>
 	</nav>
-	<main>
+	<main id="main-content">
 		<section>
             <h1>Contact the BookNest team</h1>
-            <p>Got a question? You can contact us via email or the phone number below.</p>
-			<p>We'll get back to you ASAP, but please be mindful that we are a small team so it make take up to a week for us to respond during busy periods.</p>
+            <p>Got a question? You can contact us via email or phone, or use the form below and we'll get back to you.</p>
+			<p>We're a small team, so please allow up to a week for a response during busy periods.</p>
             <br>
 			<h3>Email:</h3>
 			<a href="mailto:hello@booknest.co.uk">hello@booknest.co.uk</a>
             <br>
 			<br>
 			<h3>Phone:</h3>
-			<p>01234 567890</p>
+			<a href="tel:01234567890">01234 567890</a>
 			<br>
             <br>
+            <h2>Send us a message</h2>
+            <form class="fade-in" action="#" method="post" name="contact_form" id="contact_form">
+                <fieldset>
+                    <legend>Your Message</legend>
+                    <div>
+                        <label for="contact_name">Full Name:</label>
+                        <input type="text" id="contact_name" name="contact_name" placeholder="Jane Smith">
+                        <span></span>
+                    </div>
+                    <div>
+                        <label for="contact_email">Email Address:</label>
+                        <input type="email" id="contact_email" name="contact_email" placeholder="jane@example.com">
+                        <span></span>
+                    </div>
+                    <div>
+                        <label for="contact_subject">Subject:</label>
+                        <select id="contact_subject" name="contact_subject" style="flex:1;padding:0.4em 0.6em;border:1px solid var(--color-border);border-radius:var(--radius-sm);background:var(--color-surface);color:var(--color-text);font-family:inherit;font-size:inherit;">
+                            <option value="">-- Please select --</option>
+                            <option value="general">General enquiry</option>
+                            <option value="subscription">Subscription &amp; orders</option>
+                            <option value="bookstore">Bookstore partnership</option>
+                            <option value="events">Events &amp; Q&amp;As</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span></span>
+                    </div>
+                    <div>
+                        <label for="contact_message">Message:</label>
+                        <textarea id="contact_message" name="contact_message" rows="5" placeholder="Your message here…"></textarea>
+                        <span></span>
+                    </div>
+                </fieldset>
+                <fieldset id="buttons">
+                    <legend>Send</legend>
+                    <div>
+                        <label>&nbsp;</label>
+                        <input type="submit" value="Send Message">
+                        <input type="reset" value="Clear">
+                    </div>
+                </fieldset>
+            </form>
         </section>
 		<aside>
 			<h2>Review of the Month</h2>
