@@ -31,6 +31,7 @@
 		<span class="company-name">BookNest</span>
 		</a>
 		</div>
+		<button id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">☀️</span></button>
 	</header>
 	<nav id="mobilemenu"></nav>
 	<nav id="nav_menu">
@@ -53,33 +54,83 @@
 	<main>
 		<section>
             <h1>Featured Bookstores</h1>
-            <article><h2>Red Lantern Books (Oxford)</h2>
-        	<img src= "images/oxford_red_lantern_bookshop.png" alt="Red Lantern bookshop shop front, old fashioned shop, painted red, Oxford architecture">            
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at sem sollicitudin, fringilla tortor porta, pharetra mauris.</p>            
-            </article>
-			<article>
-            <h2>Shelf & Spine (Bristol)</h2>
-        	<img src= "images/bristol_shelf_spine_bookshop.png" alt="Quaint independent bookshop shopfront in the foreground, background shows Bristol suspension bridge">            
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at sem sollicitudin, fringilla tortor porta, pharetra mauris.</p>            
-            </article>
-			<article>
-            <h2>Little Reads (Manchester)</h2>
-        	<img src= "images/manchester_little_reads_bookshop.png" alt="Quirky looking independent bookshop, blending traditional styling with modern yellow front door">            
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at sem sollicitudin, fringilla tortor porta, pharetra mauris.</p>            
-            </article>
+            <p>Click any card to discover more about each store.</p>
+            <div class="bookstores-grid">
+
+                <div class="flip-card fade-in">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="images/oxford_red_lantern_bookshop.png" alt="Red Lantern bookshop shop front, old fashioned shop, painted red, Oxford architecture">
+                            <div class="flip-front-content">
+                                <h2>Red Lantern Books</h2>
+                                <p class="flip-location">📍 Oxford</p>
+                                <p class="flip-hint">Click to find out more ↩</p>
+                            </div>
+                        </div>
+                        <div class="flip-back">
+                            <h2>Red Lantern Books</h2>
+                            <p>A beloved Oxford institution tucked along a cobbled lane, Red Lantern Books specialises in rare and antiquarian titles alongside a carefully curated selection of new fiction.</p>
+                            <p><strong>Speciality:</strong> Rare &amp; antiquarian books</p>
+                            <p><strong>Open:</strong> Mon–Sat, 9am–6pm</p>
+                            <a href="https://www.ioba.org/" target="_blank" rel="noopener noreferrer" class="btn">Visit Website ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card fade-in">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="images/bristol_shelf_spine_bookshop.png" alt="Quaint independent bookshop shopfront in the foreground, background shows Bristol suspension bridge">
+                            <div class="flip-front-content">
+                                <h2>Shelf &amp; Spine</h2>
+                                <p class="flip-location">📍 Bristol</p>
+                                <p class="flip-hint">Click to find out more ↩</p>
+                            </div>
+                        </div>
+                        <div class="flip-back">
+                            <h2>Shelf &amp; Spine</h2>
+                            <p>Set with views of the Clifton Suspension Bridge, Shelf &amp; Spine is Bristol's go-to spot for literary fiction, poetry, and independent press titles.</p>
+                            <p><strong>Speciality:</strong> Literary fiction &amp; poetry</p>
+                            <p><strong>Open:</strong> Tue–Sun, 10am–7pm</p>
+                            <a href="https://www.ioba.org/" target="_blank" rel="noopener noreferrer" class="btn">Visit Website ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card fade-in">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="images/manchester_little_reads_bookshop.png" alt="Quirky looking independent bookshop, blending traditional styling with modern yellow front door">
+                            <div class="flip-front-content">
+                                <h2>Little Reads</h2>
+                                <p class="flip-location">📍 Manchester</p>
+                                <p class="flip-hint">Click to find out more ↩</p>
+                            </div>
+                        </div>
+                        <div class="flip-back">
+                            <h2>Little Reads</h2>
+                            <p>With its iconic yellow door and eclectic window displays, Little Reads champions children's books, graphic novels, and debut authors from the North of England.</p>
+                            <p><strong>Speciality:</strong> Children's &amp; graphic novels</p>
+                            <p><strong>Open:</strong> Mon–Sun, 9:30am–5:30pm</p>
+                            <a href="https://www.ioba.org/" target="_blank" rel="noopener noreferrer" class="btn">Visit Website ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
 		<aside>
 			<h2>Review of the Month</h2>
-			<article>
+			<article class="fade-in">
                 <figure>
-                    <blockquote><p>"The author interviews are insightful, and I’ve found rare books in some of the shops."</p>
-                    </blockquote> 
+                    <blockquote><p>"The author interviews are insightful, and I've found rare books in some of the shops."</p>
+                    </blockquote>
                     <figcaption> - Aminah K. </figcaption>
                     <br>
                     <a href="register.html">Register</a> to submit your own review for a chance to be featured on our homepage.
-				</figure>
+			</figure>
 			</article>
-			<article>
+			<article class="fade-in">
 			<h2>Additional Resources</h2>
 			<ul>
 				<li><a href="https://www.ioba.org/" target="_blank">Independent Booksellers Association</a></li>
@@ -87,10 +138,12 @@
 				<li><a href="https://literacytrust.org.uk/" target="_blank">National Literacy Trust</a></li>
 			</ul>
 			</article>
-		</aside> 
+		</aside>
 	</main>
 	<footer>
 		<p>&copy; 2026, BookNest</p>
 	</footer>
+	<script src="js/bookstores.js"></script>
+	<script src="js/theme.js"></script>
 </body>
 </html>
